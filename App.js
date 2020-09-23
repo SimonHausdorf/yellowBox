@@ -1,6 +1,13 @@
-import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StatusBar } from "expo-status-bar";
+import React from "react";
+import { StyleSheet, Text, View } from "react-native";
+import * as Sentry from "sentry-expo";
+
+Sentry.init({
+  dsn: "https://test@test.ingest.sentry.io/123",
+  enableInExpoDevelopment: true,
+  debug: true,
+});
 
 export default function App() {
   return (
@@ -14,8 +21,8 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    backgroundColor: "#fff",
+    alignItems: "center",
+    justifyContent: "center",
   },
 });
